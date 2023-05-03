@@ -71,7 +71,7 @@ function App() {
        title: "Spider-Man: Far From Home",
        description: "Spider-Man: Far From Home is a 2019 American superhero film based on the Marvel Comics character Spider-Man. ",
        poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHfLbS3HDTXpDlnwaSK0j3-rZFZBudumcyzw&usqp=CAU" ,
-       rate: "4",
+       rating: "4",
        trailer: "https://www.youtube.com/embed/DYYtuKyMtY8"
     },
   
@@ -80,7 +80,7 @@ function App() {
        title: "Alita: Battle Angel",
        description: "Alita: Battle Angel is a 2019 American cyberpunk action film based on Yukito Kishiro's manga series Gunnm. ",
        poster: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh8dJz-wFSNtx0KncRBrA-oQ0FU3tXojbg4g&usqp=CAU" ,
-       rate: "2",
+       rating: "2",
        trailer: "https://www.youtube.com/embed/mkZsFiVQQsk"
     },
   
@@ -94,17 +94,17 @@ function App() {
     },
   ]);
   const [titleSearch, setTitleSearch] = useState("");
-  const [ratingSearch, SetRatingSearch] = useState(0);
+  
   const [filteredMovies, setFilteredMovies] = useState([]);
 
   useEffect(() => {
     const filtered = movies.filter(
       (movie) =>
-        movie.title.toLowerCase().includes(titleSearch.toLowerCase()) &&
-        movie.rating >= ratingSearch
+        movie.title.toLowerCase().includes(titleSearch.toLowerCase()) 
+       
     );
     setFilteredMovies(filtered);
-  }, [movies, titleSearch, ratingSearch]);
+  }, [movies, titleSearch ]);
 
   return (
     <div className="App">
@@ -112,8 +112,7 @@ function App() {
         setMovies={setMovies}
         movies={movies}
         setTitleSearch={setTitleSearch}
-        SetRatingSearch={SetRatingSearch}
-        ratingSearch={ratingSearch}
+       
       />
 
       <Routes>

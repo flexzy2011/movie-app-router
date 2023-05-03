@@ -33,9 +33,7 @@ const MyNav = ({ setMovies, movies, setTitleSearch, setRatingSearch, ratingSearc
     setTitleSearch(e.target.value);
   };
 
-  const handleRatingSearch = (newRating) => {
-    setRatingSearch(newRating);
-  };
+  
 
   return (
     <div>
@@ -54,7 +52,6 @@ const MyNav = ({ setMovies, movies, setTitleSearch, setRatingSearch, ratingSearc
               size={24}
               color2={"#ffd700"}
               half={false}
-              onChange={handleRatingSearch}
               value={ratingSearch}
             />
             <Button variant="warning" onClick={handleShow} className="ms-2">
